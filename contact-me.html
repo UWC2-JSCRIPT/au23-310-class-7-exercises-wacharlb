@@ -2,9 +2,114 @@
 <html>
   <head>
     <title>Contact Me</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="contact-me.css"/>
   </head>
 
   <body>
-    <!-- TODO -->
+    <div class="container">
+      <h1>Contact Me</h1>
+      <form id="contact-me-form" action="">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            class="form-control"
+            type="text"
+            name="name"
+            required          
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            class="form-control"
+            type="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="kind">Reason for contacting? (select type)</label>
+          <select class="form-control" name="kind" id="reason-kind">
+            <option value="choose" selected="selected" disabled>
+              Choose one
+            </option>
+            <option value="job-opportunity">Job opportunity</option>
+            <option value="talk-code">Talk code</option>
+          </select>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group hidden">
+          <div>
+            <label for="job-title">Job Title</label>
+            <input 
+              id="job-title"
+              class="form-control"
+              type="text"
+              />
+          </div>
+          <div>
+            <label for="company-url">Company URL</label>
+            <input
+              id="company-url"
+              class="form-control"
+              type="url"
+            />           
+          </div>
+        </div>
+
+        <!--<div class="form-group hidden">
+          <label for="coding-language">Coding Language</label>
+          <input
+            id="coding-language"
+            class="form-control"
+            type="text"
+          />
+        </div> -->
+
+        <div class="form-group hidden">
+          <label for="coding-language">Coding Language</label>
+          <select class="form-control" name="kind" id="coding-language-kind">
+            <option value="choose" selected="selected" disabled>
+              Choose one
+            </option>
+            <option value="cpp">C++</option>
+            <option value="csharp">C#</option>
+            <option value="python">Python</option>
+            <option value="javascript">Javascript</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+          </select>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div>
+          <textarea 
+            id="message"
+            name="text-message" 
+            rows="4" 
+            cols="70"
+            minlength="10"
+            required>
+          </textarea>          
+        </div>
+
+        <div class="form-group">
+          <input class="btn btn-primary" type="submit" value="Submit" />
+        </div>
+
+      </form>
+    </div>
+    <script src="contact-me.js"></script>
   </body>
 </html>
